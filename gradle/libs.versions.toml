@@ -1,0 +1,19 @@
+[versions]
+# Convention plugins
+conventionVersion = "0.0.1"
+
+[libraries]
+elessa-convention = { module = "com.llamasoft.elessa.buildlogic:convention", version.ref = "conventionVersion" }
+
+[plugins]
+
+llamasoft-android-application = { id = "llamasoft.android.application", version.ref = "conventionVersion" }
+llamasoft-android-library = { id = "llamasoft.android.library", version.ref = "conventionVersion" }
+llamasoft-android-compose = { id = "llamasoft.android.compose", version.ref = "conventionVersion" }
+llamasoft-library-data = { id = "llamasoft.library.data", version.ref = "conventionVersion" }
+llamasoft-library-presentation = { id = "llamasoft.library.presentation", version.ref = "conventionVersion" }
+llamasoft-jacoco = { id = "llamasoft.android.jacoco", version.ref = "conventionVersion" }
+llamasoft-library-jacoco = { id = "llamasoft.library.jacoco", version.ref = "conventionVersion" }
+llamasoft-detekt = { id = "llamasoft.detekt", version.ref = "conventionVersion" }
+llamasoft-koin = { id = "llamasoft.koin", version.ref = "conventionVersion" }
+llamasoft-release-notes = { id = "llamasoft.release.notes", version.ref = "conventionVersion" }
