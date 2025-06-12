@@ -1,21 +1,17 @@
+buildscript {
+    dependencies {
+        classpath(libs.elessa.convention)
+    }
+}
+allprojects {
+    apply(plugin = "llamasoft.detekt")
+}
 plugins {
-    alias(libs.plugins.llamasoft.detekt) apply false
-}
-
-tasks.register("detektAll") {
-    dependsOn(subprojects.map { "${it.path}:detekt" })
-    group = "verification"
-    description = "Run detekt on all modules"
-}
-
-tasks.register("testAll") {
-    dependsOn(subprojects.map { "${it.path}:test" })
-    group = "verification"
-    description = "Run tests on all modules"
-}
-
-tasks.register("buildAll") {
-    dependsOn(subprojects.map { "${it.path}:build" })
-    group = "build"
-    description = "Build all modules"
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.compose.compiler) apply false
+    alias(libs.plugins.ksp) version libs.versions.kspVersion.get() apply true
+    id("io.gitlab.arturbosch.detekt") version "1.22.0"
+    id("org.jetbrains.kotlin.jvm") version "1.7.20" apply false
 }

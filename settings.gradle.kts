@@ -1,11 +1,17 @@
 pluginManagement {
     repositories {
-        google()
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
         mavenCentral()
         gradlePluginPortal()
 
         maven {
-            url = uri("https://ad4f-179-6-6-210.ngrok-free.app/artifactory/libs-release-local")
+            url = uri("https://0373-179-6-6-210.ngrok-free.app/artifactory/libs-release-local")
             credentials {
                 username = "admin"
                 password = "P7WxdLiZKSWD2yf"
@@ -16,12 +22,11 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.namespace == "llamasoft") {
-                useModule("com.llamasoft.elessa.buildlogic:convention:${requested.version ?: "0.0.1"}")
+                useModule("com.llamasoft.elessa.buildlogic:convention:${requested.version}")
             }
         }
     }
 }
-
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -30,4 +35,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "elessa-core"
+rootProject.name = "Elessa"
+include(":model")

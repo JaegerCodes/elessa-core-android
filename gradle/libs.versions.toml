@@ -1,11 +1,27 @@
 [versions]
 # Convention plugins
-conventionVersion = "0.0.1"
+conventionVersion = "0.0.9"
+
+# Coroutines
+coroutinesVersion = "1.7.3"
+
+# Gradle plugins
+androidGradleVersion = "8.5.2"
+kotlinVersion = "2.0.21"
+kspVersion = "2.0.21-1.0.27"
 
 [libraries]
 elessa-convention = { module = "com.llamasoft.elessa.buildlogic:convention", version.ref = "conventionVersion" }
 
+# Coroutines
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
+
 [plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradleVersion" }
+android-library = { id = "com.android.library", version.ref = "androidGradleVersion" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinVersion" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
 
 llamasoft-android-application = { id = "llamasoft.android.application", version.ref = "conventionVersion" }
 llamasoft-android-library = { id = "llamasoft.android.library", version.ref = "conventionVersion" }
